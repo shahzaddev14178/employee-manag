@@ -1,6 +1,7 @@
 package com.employee.service.impl;
 
 import com.employee.entity.Employee;
+import com.employee.exception.ResourceNotFoundException;
 import com.employee.repository.EmployeeRepository;
 import com.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployeeById(Long id) {
-        return employeeRepository.findById(id).orElse(null);
+        return employeeRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Resource Not Found on server given by the user !!"+id));
     }
 
     @Override
