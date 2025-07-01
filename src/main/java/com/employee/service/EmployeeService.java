@@ -12,4 +12,5 @@ public interface EmployeeService {
 
     void deleteEmpById(Long id);
     Employee updateEmployeeById(Long id, Employee employee);
+    Employee getEmployeeWithMaxSalary();
 }

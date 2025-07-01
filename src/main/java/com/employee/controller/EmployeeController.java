@@ -46,4 +46,10 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.updateEmployeeById(id,employee));
     }
 
+    @GetMapping("/max-salary")
+    public ResponseEntity<Employee> getEmployeeWithMaxSalary(){
+        return ResponseEntity.ok(employeeService.getEmployeeWithMaxSalary());
+    }
+
+
 }
